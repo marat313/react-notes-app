@@ -10,11 +10,13 @@
     box-sizing: border-box;
 }
 
+
+
 :root {
     --color-bg-dark: #3a3a3a;
-    --color-bg-black: #111111;
+    --color-bg-black: #0a3a3a;
     --color-white: #fefefe;
-    --color-primary: #7634d8;
+    --color-primary: #097666;
     --color-danger: rgb(249, 84, 84);
 }
 
@@ -212,6 +214,23 @@ h2 {
         margin: 8rem 0.5rem;
         gap: 1rem;
     }
+    .notes_container > .note{
+        border-radius: 12px;
+        border: 1px solid darkgreen;
+        box-shadow: 10px 15px 49px rgba(0, 0, 0, 0.22);
+        backdrop-filter: blur(6px);
+        cursor: pointer;
+        transition: all 0.8s;
+        user-select: none;
+        font-weight: bolder;
+    }
+    .note:hover{
+        border: 1px solid black;
+        transform: scale(1.05)
+    }
+    .note:active {
+        transform: scale(0.95) rotateZ(1.7deg);
+      }
 
     .btn.add_btn {
         padding: 1.5rem;

@@ -21,20 +21,38 @@ const CreateNote = ({setNotes}) => {
       // redirect to home page
       navigate("/") 
     }
+    if(title, details == "") {
+      alert("Поле не может быть пустым")
+    }
   }
 
   return (
-    <section>
-      <header className="create-note_header">
-         <Link to="/" className='btn'><IoIosArrowBack/></Link>
-         <button className='btn lg primary' onClick={handleSubmit}>Save</button>
-      </header>
-      <form className="create-note_form" onSubmit={handleSubmit}>
-        <input type="text" placeholder='Title' value={title} onChange={(e) => setTitle(e.target.value)} autoFocus />
-        <textarea rows="28" placeholder='Note details...' value={details} onChange={(e) => setDetails(e.target.value)}></textarea>
-      </form>
-    </section>
-  )
+      <section>
+          <header className="create-note_header">
+              <Link to="/" className="btn">
+                  <IoIosArrowBack />  {/* arrow back button */}
+              </Link>
+              <button className="btn lg primary" onClick={handleSubmit}>
+                  Save
+              </button>
+          </header>
+          <form className="create-note_form" onSubmit={handleSubmit}>
+              <input
+                  type="text"
+                  placeholder="Title"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  autoFocus
+              />
+              <textarea
+                  rows="28"
+                  placeholder="Note details..."
+                  value={details}
+                  onChange={(e) => setDetails(e.target.value)}
+              ></textarea>
+          </form>
+      </section>
+  );
 }
 
 export default CreateNote
